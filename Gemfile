@@ -14,6 +14,7 @@ gem 'sequel'
 gem 'rspec', :group => "test"
 gem 'capybara', :group => "test"
 gem 'cucumber', :group => "test"
+gem 'kelp', :group => "test"
 gem 'rack-test', :require => "rack/test", :group => "test"
 
 
