@@ -1,6 +1,6 @@
-Given /^I visit the calculator page$/ do
-  visit '/add'
-end
+#Given /^I visit the calculator page$/ do
+#  visit '/add'
+#end
 
 Given /^I fill in '(.*)' for '(.*)'$/ do |value, field|
   fill_in(field, :with => value)
