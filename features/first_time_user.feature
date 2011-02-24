@@ -5,10 +5,11 @@ Feature: First time user
 
   Scenario: first time visit
     Given I visit the home page
-    Then I should see a dropdown of cities
+    Then I should see 'Confirm your city:'
+    And I should see a dropdown of cities
 
   Scenario: comfirm city
     Given I visit the home page
     When I select 'San Francisco' from 'cities'
-    And I press 'Confirm'
-    Then I should see 'Enter your email'
+    And I press 'continue'
+    Then I should see 'Enter your email address:'
