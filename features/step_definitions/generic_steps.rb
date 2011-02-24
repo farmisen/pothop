@@ -7,5 +7,9 @@ When /^I press '(.*)'$/ do |name|
 end
 
 Then /^I should see '(.*)'$/ do |text|
-  response_body.should contain(/#{text}/m)
+  should_see text
+end
+
+When /^I select '(.*)' from '(.*)'$/ do |option, from|
+  select(option, :from => from)
 end
