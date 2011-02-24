@@ -6,7 +6,6 @@ gem 'rack-flash'
 gem 'thin' # or mongrel
 
 # Component requirements
-gem 'bcrypt-ruby', :require => "bcrypt"
 gem 'haml'
 gem 'pg'
 gem 'sequel'

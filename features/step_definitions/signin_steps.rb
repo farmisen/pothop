@@ -1,7 +1,7 @@
-Given /^I have an existing account with email "([^"]*)" and password "([^"]*)" and name "([^"]*)"$/ do |arg1, arg2, arg3|
-  pending # express the regexp above with the code you wish you had
+Given /^I have an existing account with email "([^"]*)" and password "([^"]*)" and first_name "([^"]*)"$/ do |email, password, first_name|
+  Account.create(:email => email, :first_name => first_name, :password => password, :password_confirmation => password )
 end
 
 Given /^I am on the signin page$/ do
-  pending # express the regexp above with the code you wish you had
+  visit '/signin'
 end

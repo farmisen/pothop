@@ -20,6 +20,7 @@ class Account < ::Sequel::Model
   # Callbacks
   def before_save
     generate_password
+    super
   end
 
   ##
@@ -38,12 +39,17 @@ class Account < ::Sequel::Model
   end
 
   def has_password?(password)
-    ::BCrypt::Password.new(crypted_password) == password
+    self.crypted_password == encrypt_password(password)
   end
 
   private
     def generate_password
-      self.crypted_password = ::BCrypt::Password.create(password)
+      self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{handle}--") if new? || self.salt.nil? || self.salt.length == 0
+      self.crypted_password = encrypt_password(self.password)
+    end
+
+    def encrypt_password(password)
+      Digest::SHA1.hexdigest("#{password}#{self.salt}")
     end
 
     def password_required
