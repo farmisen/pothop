@@ -19,5 +19,6 @@ Feature: Sign in
     And I fill in '123457' for 'password'
     And I press 'Sign In'
     Then I should not see 'Bob S.'
+    And I should see 'Wrong password'
 
 

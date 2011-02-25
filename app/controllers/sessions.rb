@@ -6,6 +6,7 @@ Pothop.controllers :sessions do
   post :signin, :map => "/signin" do
     @account = Account.authenticate(params[:email], params[:password])
     if @account.nil?
+      flash[:error] = 'Wrong password'
       render 'sessions/signin'
     else
       render 'sessions/hello'
