@@ -7,6 +7,7 @@ When /^I press '(.*)'$/ do |name|
 end
 
 Then /^I should see '(.*)'$/ do |text|
+  #save_and_open_page
   should_see text
 end
 
