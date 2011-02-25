@@ -11,6 +11,11 @@ Then /^I should see '(.*)'$/ do |text|
   should_see text
 end
 
+Then /^I should not see '(.*)'$/ do |text|
+  #save_and_open_page
+  should_not_see text
+end
+
 When /^I select '(.*)' from '(.*)'$/ do |option, from|
   select(option, :from => from)
 end

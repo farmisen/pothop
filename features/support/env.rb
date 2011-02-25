@@ -14,10 +14,10 @@ World(Kelp::Visibility)
 #   Padrino.application
 Capybara.app = Pothop.tap { |app|  }
 
-
-
-#
-# Cleanup the database, could not find a cleaner to do that, TODO: look better
-#
+# register the Padrino rake tasks, could not find a cleaner to do that, TODO: look better
 Padrino::Tasks.files.flatten.uniq.each { |ext| load(ext) rescue puts "<= Failed load #{ext}" }
-Rake::Task["sq:migrate:auto"].invoke
+
+Before do
+  Rake::Task["sq:migrate:auto"].reenable
+  Rake::Task["sq:migrate:auto"].invoke
+end

@@ -5,7 +5,11 @@ Pothop.controllers :sessions do
 
   post :signin, :map => "/signin" do
     @account = Account.authenticate(params[:email], params[:password])
-    render 'sessions/hello'
+    if @account.nil?
+      render 'sessions/signin'
+    else
+      render 'sessions/hello'
+    end
   end
 
 end
