@@ -2,3 +2,5 @@ Confirm your city:
 - form_tag '/confirm_city' do
   =select_tag(:cities, :options => ['San Francisco', 'East Bay'], :selected => '1')
   =submit_tag 'continue'
+
+= link_to 'sign in', 'signin'

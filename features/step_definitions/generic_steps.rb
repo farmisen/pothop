@@ -19,3 +19,7 @@ end
 When /^I select '(.*)' from '(.*)'$/ do |option, from|
   select(option, :from => from)
 end
+
+And /^I should see a '(.*)' link$/ do |name|
+  find_link(name).visible?
+end
