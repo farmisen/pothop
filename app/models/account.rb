@@ -5,6 +5,7 @@ class Account < ::Sequel::Model
   attr_accessor :password, :password_confirmation
 
   def validate
+    super
     validates_presence     :email
     validates_presence     :role
     validates_presence     :password if password_required
@@ -44,7 +45,7 @@ class Account < ::Sequel::Model
 
   private
     def generate_password
-      self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{handle}--") if new? || self.salt.nil? || self.salt.length == 0
+      self.salt = Digest::SHA1.hexdigest("--#{Time.now.to_s}--#{self.email}--") if new? || self.salt.nil? || self.salt.length == 0
       self.crypted_password = encrypt_password(self.password)
     end
 
