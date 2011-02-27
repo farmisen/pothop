@@ -4,6 +4,7 @@ end
 
 When /^I press '(.*)'$/ do |name|
   click_button(name)
+  #save_and_open_page
 end
 
 Then /^I should see '(.*)'$/ do |text|

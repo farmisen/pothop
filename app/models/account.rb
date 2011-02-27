@@ -4,6 +4,8 @@ class Account < ::Sequel::Model
 
   attr_accessor :password, :password_confirmation
 
+  many_to_one :city
+
   def validate
     super
     validates_presence     :email

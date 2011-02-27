@@ -4,12 +4,13 @@ Pothop.controllers :sessions do
   end
 
   post :signin, :map => "/signin" do
-    @account = Account.authenticate(params[:email], params[:password])
-    if @account.nil?
+    account = Account.authenticate(params[:email], params[:password])
+    if account.nil?
       flash[:error] = 'Wrong password'
       render 'sessions/signin'
     else
-      render 'sessions/hello'
+      set_current_account(account)
+      redirect url_for(:deal, :index)
     end
   end
 

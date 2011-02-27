@@ -1,7 +1,7 @@
 #city
   Change your city:
   - form_tag '/change_city' do
-    =select_tag(:cities, :options => @city_names, :selected => '1')
+    =select_tag(:city_selector, :options => @city_names, :selected => @city.name, :id => 'city_selector')
     =submit_tag 'change'
 
 #deal

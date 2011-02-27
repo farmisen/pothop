@@ -1,5 +1,5 @@
 class ModifyDeals < Sequel::Migration
   def change
-    rename_column :deal, :quantity, :total
+    rename_column :deals, :quantity, :total
   end
 end

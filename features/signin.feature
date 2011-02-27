@@ -4,10 +4,17 @@ Feature: Sign in
   I want to be able to signin
 
   Background:
+     Given the following cities exist:
+      | name          |
+      | San Francisco |
     Given the following user exists:
-      | email           | password | first_name | last_name | role |
-      | bob@example.com | 123456   | bob        | smith     | user |
+      | email           | password | first_name | last_name | role | city          |
+      | bob@example.com | 123456   | bob        | smith     | user | San Francisco |
+    And the following deals exist:
+       | title                            | price | value | description      | fine_print                | bought | total    | city          |
+       | $200 for an ouncer of Jack Frost | 200   | 300   | a very good deal | the devil lays in details | 4      | 50       | San Francisco |
 
+  @dev
   Scenario: User is signed in when he press Sign In
     And I am on the signin page
     When I fill in 'bob@example.com' for 'email'
