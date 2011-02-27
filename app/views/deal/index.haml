@@ -1,0 +1,27 @@
+#city
+  Change your city:
+  - form_tag '/change_city' do
+    =select_tag(:cities, :options => @city_names, :selected => '1')
+    =submit_tag 'change'
+
+#deal
+  #title
+    = @deal.title
+  #price
+    = "Price: $#{@deal.price}"
+  #value
+    = "Value: $#{@deal.value}"
+  #saving
+    = "You save: $#{@deal.saving}"
+  #discount
+    = "Discount: #{@deal.discount}%"
+  #description
+    = @deal.description
+  #fine_print
+    = "The Fine Print: #{@deal.fine_print}"
+  #stats
+    #bought
+      = "#{@deal.bought} bought"
+    #bought
+      = "Total: #{@deal.total}"
+

@@ -4,7 +4,9 @@ Feature: Sign in
   I want to be able to signin
 
   Background:
-    Given An existing account with email "bob@example.com" and password "123456" and first_name "bob" and last_name "smith" and role "user"
+    Given the following user exists:
+      | email           | password | first_name | last_name | role |
+      | bob@example.com | 123456   | bob        | smith     | user |
 
   Scenario: User is signed in when he press Sign In
     And I am on the signin page
