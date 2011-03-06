@@ -5,23 +5,24 @@
     =submit_tag 'change'
 
 #deal
-  #title
-    = @deal.title
-  #price
-    = "Price: $#{@deal.price}"
-  #value
-    = "Value: $#{@deal.value}"
-  #saving
-    = "You save: $#{@deal.saving}"
-  #discount
-    = "Discount: #{@deal.discount}%"
-  #description
-    = @deal.description
-  #fine_print
-    = "The Fine Print: #{@deal.fine_print}"
-  #stats
-    #bought
-      = "#{@deal.bought} bought"
-    #bought
-      = "Total: #{@deal.total}"
+  - unless @deal.nil?
+    #title
+      = @deal.title
+    #price
+      = "Price: $#{@deal.price}"
+    #value
+      = "Value: $#{@deal.value}"
+    #saving
+      = "You save: $#{@deal.saving}"
+    #discount
+      = "Discount: #{@deal.discount}%"
+    #description
+      = @deal.description
+    #fine_print
+      = "The Fine Print: #{@deal.fine_print}"
+    #stats
+      #bought
+        = "#{@deal.bought} bought"
+      #bought
+        = "Total: #{@deal.total}"
 

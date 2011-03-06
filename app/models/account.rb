@@ -2,7 +2,7 @@ class Account < ::Sequel::Model
 
   plugin :validation_helpers
 
-  attr_accessor :password, :password_confirmation
+  attr_accessor :password, :password_confirmation, :tos_aggreement
 
   many_to_one :city
 
@@ -10,6 +10,7 @@ class Account < ::Sequel::Model
     super
     validates_presence     :email
     validates_presence     :role
+    validates_presence     :tos_aggreement
     validates_presence     :password if password_required
     validates_presence     :password_confirmation if password_required
     validates_length_range 4..40, :password unless password.blank?

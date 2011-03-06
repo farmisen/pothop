@@ -1,5 +1,6 @@
 Given /^the following user exists:$/ do |table|
   params = table.hashes[0]
+  params[:tos_aggreement] = true
   params['password_confirmation'] = params['password']
   city = City[ :name => params.delete( 'city')]
   account = Account.new(params)

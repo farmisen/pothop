@@ -8,7 +8,6 @@ When /^I press '(.*)'$/ do |name|
 end
 
 Then /^I should see '(.*)'$/ do |text|
-  #save_and_open_page
   should_see text
 end
 
@@ -23,4 +22,9 @@ end
 
 And /^I should see a '(.*)' link$/ do |name|
   find_link(name).visible?
+end
+
+
+When /^I check '(.*)'$/ do |name|
+  check(name)
 end

@@ -1,0 +1,9 @@
+- form_tag '/signup' do
+  =text_field_tag(:first_name)
+  =text_field_tag(:last_name)
+  =text_field_tag(:email)
+  =password_field_tag(:password)
+  =password_field_tag(:password_confirmation)
+  =check_box_tag(:tos_aggreement)
+  =submit_tag 'Sign Up'
+=flash_tag :error
