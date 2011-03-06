@@ -4,7 +4,7 @@ Pothop.controllers :deal do
 
     if logged_in?
       @account = current_account()
-      session[:city] = @account.city
+      session[:city] ||= @account.city
     end
 
 

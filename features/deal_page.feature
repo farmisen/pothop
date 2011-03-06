@@ -19,7 +19,7 @@ Feature: Deal page
       | $75 for a Mobile Hand Wash       | 75    | 175   | a spotless car   | Expires Aug 29, 2011      | 15     | 150      | Dallas        |
       | $200 for an ouncer of Jack Frost | 200   | 300   | a very good deal | the devil lays in details | 4      | 50       | San Francisco |
 
-  Scenario: Guest select a city and see a deal
+  Scenario: Guest select a city and see a deal for this city
     Given I am on the deal page
     And I have selected 'San Francisco' for city
     Then I should see '$200 for an ouncer of Jack Frost'
@@ -46,6 +46,23 @@ Feature: Deal page
     And I should see 'The Fine Print: Expires Aug 29, 2011'
     And I should see '15 bought'
     And I should see 'Total: 150'
+
+  Scenario: User select a city and see a deal for this city
+    Given I am logged in with the following values:
+      | email           | password |
+      | bob@example.com | 123456   |
+    And I am on the deal page
+    And I have selected 'San Francisco' for city
+    Then I should see '$200 for an ouncer of Jack Frost'
+    And I should see 'Price: $200'
+    And I should see 'Value: $300'
+    And I should see 'You save: $100'
+    And I should see 'Discount: 33%'
+    And I should see 'a very good deal'
+    And I should see 'The Fine Print: the devil lays in details'
+    And I should see '4 bought'
+    And I should see 'Total: 50'
+
 
   Scenario: User has his city selected
     Given I am logged in with the following values:
