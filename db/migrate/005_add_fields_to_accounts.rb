@@ -1,4 +1,4 @@
-class AddFieldsToAccounts < Sequel::Migration
+class AddFieldsToAccounts_005 < Sequel::Migration
   def up
     alter_table :accounts do
       add_foreign_key :city_id, :cities

@@ -1,0 +1,20 @@
+= f.label :first_name, :caption => "First Name"
+= f.text_field(:first_name)
+
+= f.label :last_name, :caption => "Last Name"
+= f.text_field(:last_name)
+
+= f.label :email, :caption => "Email"
+= f.text_field(:email)
+
+= f.label :business_name, :caption => "Business Name"
+= f.text_field(:business_name)
+
+= f.label :business_city_name, :caption => "Business City"
+= f.select(:business_city_name, :options => @city_names, :selected =>  @account.business_city.try(:name) || @city_names[0]  )
+
+= f.label :password, :caption => "Password"
+= f.password_field(:password)
+
+= f.label :password_confirmation, :caption => "Password Confirmation"
+= f.password_field(:password_confirmation)

@@ -5,6 +5,7 @@ class Account < ::Sequel::Model
   attr_accessor :password, :password_confirmation, :tos_aggreement
 
   many_to_one :city
+  many_to_one :business_city, :class => :City
 
   def validate
     super

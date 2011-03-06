@@ -1,4 +1,4 @@
-class CreateCities < Sequel::Migration
+class CreateCities_002 < Sequel::Migration
   def up
     create_table :cities do
       primary_key :id

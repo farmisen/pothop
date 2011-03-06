@@ -5,6 +5,6 @@
 
   %body
     #user
-      = "#{@account.first_name.capitalize} #{@account.last_name.capitalize[0,1]}." unless @account.nil?
+      = "#{current_account.first_name.capitalize} #{current_account.last_name.capitalize[0,1]}." unless current_account.nil?
 
     =yield

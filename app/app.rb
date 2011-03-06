@@ -42,4 +42,10 @@ class Pothop < Padrino::Application
   #   end
   #
 
+  class Object
+    def try(method)
+     self.send(method) unless self.nil?
+    end
+  end
+
 end

@@ -1,0 +1,4 @@
+-form_for :account, url(:partner_accounts, :update, :id => @account.id), :method => :put do |f|
+  =partial "partner_accounts/form", :locals => { :f => f }
+  =f.submit 'Update'
+=flash_tag :error

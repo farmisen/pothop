@@ -3,8 +3,7 @@ Pothop.controllers :deal do
   before do
 
     if logged_in?
-      @account = current_account()
-      session[:city] ||= @account.city
+      session[:city] ||= current_account.city
     end
 
 

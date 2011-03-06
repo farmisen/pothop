@@ -1,4 +1,4 @@
-class CreateDeals < Sequel::Migration
+class CreateDeals_003 < Sequel::Migration
   def up
     create_table :deals do
       primary_key :id

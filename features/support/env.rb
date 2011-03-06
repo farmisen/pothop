@@ -4,10 +4,12 @@ require File.expand_path(File.dirname(__FILE__) + "/../../config/boot")
 require 'capybara/cucumber'
 require 'kelp/dropdown'
 require 'kelp/visibility'
+require 'kelp/field'
 require 'padrino-core/cli/rake'
 
 World(Kelp::Dropdown)
 World(Kelp::Visibility)
+World(Kelp::Field)
 
 module Kelp
   # This module defines methods for working with dropdown fields in a web form,
