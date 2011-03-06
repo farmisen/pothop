@@ -26,6 +26,6 @@ Feature: Admin partner account
     And I fill in '123456' for 'Password'
     And I fill in '123456' for 'Password Confirmation'
     And I fill in 'The Green Door' for 'Business Name'
-    And I select 'San Francisco' for 'Business City'
+    And I select 'San Francisco' for 'City'
     And I press 'Create'
     Then 'Business Name' should contain 'The Green Door'

@@ -10,8 +10,8 @@
 = f.label :business_name, :caption => "Business Name"
 = f.text_field(:business_name)
 
-= f.label :business_city_name, :caption => "Business City"
-= f.select(:business_city_name, :options => @city_names, :selected =>  @account.business_city.try(:name) || @city_names[0]  )
+= f.label :city_name, :caption => "City"
+= f.select(:city_name, :options => @city_names, :selected =>  @account.city.try(:name) || @city_names[0]  )
 
 = f.label :password, :caption => "Password"
 = f.password_field(:password)
