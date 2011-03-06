@@ -8,9 +8,12 @@ Feature: Admin partner account
       | name          |
       | Dallas        |
       | San Francisco |
-    And the following user exists:
-      | email           | password | first_name | last_name | role  | city   |
-      | bob@example.com | 123456   | bob        | smith     | admin | Dallas |
+    And the following users exist:
+      | email            | password  | first_name  | last_name | role    | city   | business_name   |
+      | bob@example.com  | 123456    | bob         | smith     | admin   | Dallas | pothop          |
+      | john@example.com | 123456    | john        | smith     | partner | Dallas | The Purple Door |
+      | bill@example.com | 123456    | bill        | smith     | partner | Dallas | The Blue Door   |
+      | dick@example.com | 123456    | dick        | smith     | partner | Dallas | The Red Door    |
 
 
   @dev
@@ -29,3 +32,12 @@ Feature: Admin partner account
     And I select 'San Francisco' for 'City'
     And I press 'Create'
     Then 'Business Name' should contain 'The Green Door'
+
+
+  @dev
+  Scenario: I can see a list of parners
+    Given I am logged in with the following values:
+      | email           | password |
+      | bob@example.com | 123456   |
+    And I am on the manage partner accounts page
+    Then I can see 3 partners

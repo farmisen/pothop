@@ -1,1 +1,11 @@
+#partners
+  %table
+    %tr
+      %th
+        Business Name
+    - @partner_accounts.each do |account|
+      %tr.partner
+        %td
+          = account.business_name
+
 = link_to 'Add a partner account', url( :partner_accounts, :new)

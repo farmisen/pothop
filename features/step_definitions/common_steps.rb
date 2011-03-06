@@ -1,11 +1,13 @@
-Given /^the following user exists:$/ do |table|
-  params = table.hashes[0]
-  params[:tos_aggreement] = true
-  params['password_confirmation'] = params['password']
-  city = City[ :name => params.delete( 'city')]
-  account = Account.new(params)
-  account.city = city
-  account.save
+Given /^the following users exist:$/ do |table|
+  table.hashes.each {
+      |params|
+    params[:tos_aggreement] = true
+    params['password_confirmation'] = params['password']
+    city = City[ :name => params.delete( 'city')]
+    account = Account.new(params)
+    account.city = city
+    account.save
+  }
 end
 
 Given /^the following cities exist:$/ do |table|

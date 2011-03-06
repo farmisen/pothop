@@ -11,7 +11,7 @@ Pothop.controllers :partner_accounts do
   end
 
   get :index do
-    @partner_accounts = Account.select(:role => 'partner')
+    @partner_accounts = Account.filter(:role => 'partner')
     render 'partner_accounts/index'
   end
 

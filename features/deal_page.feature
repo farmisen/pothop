@@ -10,7 +10,7 @@ Feature: Deal page
       | Dallas        |
       | San Francisco |
       | Reno          |
-    And the following user exists:
+    And the following users exist:
       | email           | password | first_name | last_name | role | city          |
       | bob@example.com | 123456   | bob        | smith     | user | Dallas |
     And the following deals exist:

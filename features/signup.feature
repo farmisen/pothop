@@ -7,7 +7,7 @@ Feature: Sign up
      Given the following cities exist:
       | name          |
       | San Francisco |
-    Given the following user exists:
+    Given the following users exist:
       | email           | password | first_name | last_name | role | city          |
       | bob@example.com | 123456   | bob        | smith     | user | San Francisco |
 

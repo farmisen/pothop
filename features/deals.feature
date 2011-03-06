@@ -8,7 +8,7 @@ Feature: Deals
       | name          |
       | Dallas        |
       | San Francisco |
-    And the following user exists:
+    And the following users exist:
       | email            | password | first_name | last_name | role    | city          | business_name  |
       | bob@example.com  | 123456   | bob        | smith     | admin   | Dallas        | pothop         |
       | jack@example.com | 123456   | jack       | frost     | partner | San Francisco | The Green Door |
