@@ -4,7 +4,7 @@ Feature: Deals
   I want to be able to manage deals
 
   Background:
-     Given the following cities exist:
+    Given the following cities exist:
       | name          |
       | Dallas        |
       | San Francisco |
@@ -21,11 +21,14 @@ Feature: Deals
       | bob@example.com | 123456   |
     And I am on the manage deals page
     When I press 'Add a deal'
+    And I select 'San Francisco' for 'City'
+    And I press 'Continue'
+    And I select 'The Green Door' for 'Partner'
+    And I press 'Continue'
     And I fill in '$10 of deep dish pizza' for 'Title'
     And I fill in '5' for 'Price'
     And I fill in '10' for 'Value'
     And I fill in 'a nice deal' for 'Description'
     And I fill in 'no onions' for 'Fine Print'
-    And I fill in 'San Francisco' for 'City'
     And I press 'Create'
     Then 'Title' should contain '$10 of deep dish pizza'

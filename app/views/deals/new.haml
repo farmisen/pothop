@@ -1,0 +1,4 @@
+-form_for :deal, url(:deals, :create) do |f|
+  =partial "deals/form", :locals => { :f => f }
+  =f.submit 'Create'
+=flash_tag :error

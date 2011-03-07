@@ -1,0 +1,5 @@
+Confirm your city:
+- form_tag url(:deals, :new), :method => 'GET' do
+  =label_tag( :partner, :caption => 'Partner')
+  =select_tag(:partner, :options => @partner_names, :id => :partner)
+  =submit_tag 'Continue'

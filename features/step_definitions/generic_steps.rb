@@ -33,5 +33,6 @@ When /^I check '(.*)'$/ do |name|
 end
 
 When /^I select '(.*)' for '(.*)'/ do |option, selector|
+  #save_and_open_page
   select(option, :from => selector)
 end
