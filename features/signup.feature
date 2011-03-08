@@ -11,7 +11,6 @@ Feature: Sign up
       | email           | password | first_name | last_name | role | city          |
       | bob@example.com | 123456   | bob        | smith     | user | San Francisco |
 
-  @dev
   Scenario: new user sign up
     Given I am on the signup page
     When I fill in 'jack' for 'first_name'

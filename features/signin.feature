@@ -14,7 +14,6 @@ Feature: Sign in
        | title                            | price | value | description      | fine_print                | bought | total    | city          |
        | $200 for an ouncer of Jack Frost | 200   | 300   | a very good deal | the devil lays in details | 4      | 50       | San Francisco |
 
-  @dev
   Scenario: User is signed in when he press Sign In
     Given I am on the signin page
     When I fill in 'bob@example.com' for 'email'

@@ -16,7 +16,6 @@ Feature: Admin partner account
       | dick@example.com | 123456    | dick        | smith     | partner | Dallas | The Red Door    |
 
 
-  @dev
   Scenario: partner account creation
     Given I am logged in with the following values:
       | email           | password |
@@ -34,7 +33,6 @@ Feature: Admin partner account
     Then 'Business Name' should contain 'The Green Door'
 
 
-  @dev
   Scenario: I can see a list of parners
     Given I am logged in with the following values:
       | email           | password |
