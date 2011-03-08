@@ -1,5 +1,4 @@
-Confirm your city:
-- form_tag url(:deals, :choose_partner), :method => 'GET' do
-  =label_tag( :deal_city_name, :caption => 'City')
-  =select_tag(:deal_city_name, :options => @city_names, :id => :deal_city_name)
-  =submit_tag 'Continue'
+-form_for :deal, url(:deals, :choose_partner), :method => 'GET' do |f|
+  =f.label( :deal_city_name, :caption => 'City')
+  =f.select(:deal_city_name, :options => @city_names, :selected => @deal.city.try(:name) || @city_names[0] )
+  =f.submit 'Continue'

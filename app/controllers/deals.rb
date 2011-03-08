@@ -1,6 +1,5 @@
 Pothop.controllers :deals do
 
-
   get :index do
     render 'deals/index'
   end
@@ -34,13 +33,16 @@ Pothop.controllers :deals do
   end
 
   get :choose_deal_city do
+    @deal = Deal.new()
     @city_names = City.all.map { |c| c.name}
     render 'deals/choose_city'
   end
 
   get :choose_partner  do
-    session[:deal_city_name] = params[:deal_city_name]
-    @partner_names = get_partner_names_for_city_name(session[:deal_city_name])
+    city_name = params[:deal].delete('deal_city_name')
+    @deal = Deal.new(params[:deal])
+    @deal.city = City[:name => city_name]
+    @partner_names = get_partner_names_for_city_name(city_name)
     render 'deals/choose_partner'
   end
 

@@ -1,5 +1,6 @@
 class Deal < Sequel::Model
   many_to_one :city
+  many_to_one :partner_account, :class => :Account
 
   def saving
     self.value - self.price

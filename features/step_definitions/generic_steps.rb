@@ -11,6 +11,7 @@ When /^I should see '(.*)'$/ do |text|
 end
 
 When /^'(.*)' should contain '(.*)'$/ do |field, text|
+  #save_and_open_page
   field_should_contain field, text
 end
 
